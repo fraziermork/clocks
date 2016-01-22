@@ -1,0 +1,13 @@
+canvas {
+  border: 1px black solid;
+}
+
+.divClock {
+  height: 300px;
+  width: 300px;
+  border: 1px black solid;
+}
+
+.clockElement {
+  position: relative;
+}
