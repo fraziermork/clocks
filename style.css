@@ -1,0 +1,38 @@
+canvas {
+  border: 1px black solid;
+}
+
+.divClock {
+  height: 300px;
+  width: 300px;
+  border: 1px black solid;
+}
+
+.clockElement {
+  position: absolute;
+  border: 1px black solid;
+  font-size: 8px;
+  text-align: center;
+  vertical-align: middle;
+}
+
+.secondHandDiv {
+  position: absolute;
+  background-color: black;
+  height: 2px;
+  width: 2px;
+}
+
+.minuteHandDiv {
+  position: absolute;
+  background-color: black;
+  height: 4px;
+  width: 4px;
+}
+
+.hourHandDiv {
+  position: absolute;
+  background-color: black;
+  height: 8px;
+  width: 8px;
+}
