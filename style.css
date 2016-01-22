@@ -17,18 +17,21 @@ canvas {
 }
 
 .secondHandDiv {
+  position: absolute;
   background-color: black;
   height: 2px;
   width: 2px;
 }
 
 .minuteHandDiv {
+  position: absolute;
   background-color: black;
-  height: 5px;
-  width: 5px;
+  height: 4px;
+  width: 4px;
 }
 
 .hourHandDiv {
+  position: absolute;
   background-color: black;
   height: 8px;
   width: 8px;
