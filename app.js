@@ -1,117 +1,58 @@
 $(document).ready(function(){
-  var divClock = document.getElementById('divClock');
-
-  var clockFaceDivs = [];
-  clockFaceDivs[0] = [200, 63.5, 10, 10, 1];
-  clockFaceDivs[1] = [236.5, 100, 10, 10, 2];
-  clockFaceDivs[2] = [250, 150, 10, 10, 3];
-  clockFaceDivs[3] = [236.5, 200, 10, 10, 4];
-  clockFaceDivs[4] = [200, 236.5, 10, 10, 5];
-  clockFaceDivs[5] = [150, 250, 10, 10, 6];
-  clockFaceDivs[6] = [100, 236.5, 10, 10, 7];
-  clockFaceDivs[7] = [63.5, 200, 10, 10, 8];
-  clockFaceDivs[8] = [50, 150, 10, 10, 9];
-  clockFaceDivs[9] = [63.5, 100, 10, 10, 10];
-  clockFaceDivs[10] = [100, 63.5, 10, 10, 11];
-  clockFaceDivs[11] = [150, 50, 10, 10, 12];
-
-  var secondHandArray = [[0], [10], [20], [30], [40], [50], [60], [70], [80], [90], [100], [110]];
-  var minuteHandArray = [[0], [10], [20], [30], [40], [50], [60], [70], [80]];
-  var hourHandArray = [[0], [10], [20], [30], [40], [50]];
-
-  function drawDivClockFace() {
-    for (var i = 0; i < clockFaceDivs.length; i++) {
-      var idString = clockFaceDivs[i][4] + 'holder';
-      var noHolder = document.createElement('div');
-      noHolder.className = 'clockElement';
-      noHolder.id = idString;
-      noHolder.textContent = clockFaceDivs[i][4];
-      divClock.appendChild(noHolder);
-      $('#' + idString).css('left', clockFaceDivs[i][0] - (clockFaceDivs[i][2]/2) );
-      $('#' + idString).css('top', clockFaceDivs[i][1] - (clockFaceDivs[i][3]/2));
-      $('#' + idString).width(clockFaceDivs[i][2] );
-      $('#' + idString).height(clockFaceDivs[i][3] );
-    }
-  }
-
-  function buildDivHand (buildArray, idAppend, handAngle, divClass, halfWidth){
-    for (var i = 0; i < buildArray.length; i++){
-      idString = secondHandArray[i][0] + idAppend;
-      secondHandArray[i].push(idString);
-      var thisDiv = document.createElement('div');
-      thisDiv.id = idString;
-      thisDiv.className = divClass;
-      divClock.appendChild(thisDiv);
-      $('#' + idString).css('left', 150 - halfWidth + buildArray[i][0] * Math.sin(handAngle));
-      $('#' + idString).css('top', 150 - halfWidth - buildArray[i][0] * Math.cos(handAngle));
-    }
-  }
-
-  function updateDivHand(buildArray, handAngle, halfWidth) {
-    for (var i = 0; i < buildArray.length; i++){
-      $('#' + buildArray[i][1]).css('left', 150 - halfWidth + buildArray[i][0] * Math.sin(handAngle));
-      $('#' + buildArray[i][1]).css('top', 150 - halfWidth - buildArray[i][0] * Math.cos(handAngle));
-    }
-  }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+  // var divClock = document.getElementById('divClock');
+  //
+  // var clockFaceDivs = [];
+  // clockFaceDivs[0] = [200, 63.5, 10, 10, 1];
+  // clockFaceDivs[1] = [236.5, 100, 10, 10, 2];
+  // clockFaceDivs[2] = [250, 150, 10, 10, 3];
+  // clockFaceDivs[3] = [236.5, 200, 10, 10, 4];
+  // clockFaceDivs[4] = [200, 236.5, 10, 10, 5];
+  // clockFaceDivs[5] = [150, 250, 10, 10, 6];
+  // clockFaceDivs[6] = [100, 236.5, 10, 10, 7];
+  // clockFaceDivs[7] = [63.5, 200, 10, 10, 8];
+  // clockFaceDivs[8] = [50, 150, 10, 10, 9];
+  // clockFaceDivs[9] = [63.5, 100, 10, 10, 10];
+  // clockFaceDivs[10] = [100, 63.5, 10, 10, 11];
+  // clockFaceDivs[11] = [150, 50, 10, 10, 12];
+  //
+  // var secondHandArray = [[0], [10], [20], [30], [40], [50], [60], [70], [80], [90], [100], [110]];
+  // var minuteHandArray = [[0], [10], [20], [30], [40], [50], [60], [70], [80]];
+  // var hourHandArray = [[0], [10], [20], [30], [40], [50]];
+  //
+  // function drawDivClockFace() {
+  //   for (var i = 0; i < clockFaceDivs.length; i++) {
+  //     var idString = clockFaceDivs[i][4] + 'holder';
+  //     var noHolder = document.createElement('div');
+  //     noHolder.className = 'clockElement';
+  //     noHolder.id = idString;
+  //     noHolder.textContent = clockFaceDivs[i][4];
+  //     divClock.appendChild(noHolder);
+  //     $('#' + idString).css('left', clockFaceDivs[i][0] - (clockFaceDivs[i][2]/2) );
+  //     $('#' + idString).css('top', clockFaceDivs[i][1] - (clockFaceDivs[i][3]/2));
+  //     $('#' + idString).width(clockFaceDivs[i][2] );
+  //     $('#' + idString).height(clockFaceDivs[i][3] );
+  //   }
+  // }
+  //
+  // function buildDivHand (buildArray, idAppend, handAngle, divClass, halfWidth){
+  //   for (var i = 0; i < buildArray.length; i++){
+  //     idString = secondHandArray[i][0] + idAppend;
+  //     secondHandArray[i].push(idString);
+  //     var thisDiv = document.createElement('div');
+  //     thisDiv.id = idString;
+  //     thisDiv.className = divClass;
+  //     divClock.appendChild(thisDiv);
+  //     $('#' + idString).css('left', 150 - halfWidth + buildArray[i][0] * Math.sin(handAngle));
+  //     $('#' + idString).css('top', 150 - halfWidth - buildArray[i][0] * Math.cos(handAngle));
+  //   }
+  // }
+  //
+  // function updateDivHand(buildArray, handAngle, halfWidth) {
+  //   for (var i = 0; i < buildArray.length; i++){
+  //     $('#' + buildArray[i][1]).css('left', 150 - halfWidth + buildArray[i][0] * Math.sin(handAngle));
+  //     $('#' + buildArray[i][1]).css('top', 150 - halfWidth - buildArray[i][0] * Math.cos(handAngle));
+  //   }
+  // }
 
 
 
@@ -197,9 +138,9 @@ $(document).ready(function(){
     secondHand.angle += (secondHand.seconds % 60) * secondHand.increment;
     minuteHand.angle += (((secondHand.seconds % 3600) - (secs % 6))/ 6 ) * minuteHand.increment;
     hourHand.angle += (((secondHand.seconds % 43200) - ( (60 * mins + secs) % 72) ) / 72 ) * hourHand.increment;
-    buildDivHand(secondHandArray, 'second', secondHand.angle, 'secondHandDiv',  1);
-    buildDivHand(minuteHandArray, 'minute', minuteHand.angle, 'minuteHandDiv',  2);
-    buildDivHand(hourHandArray, 'hour', hourHand.angle, 'hourHandDiv', 4);
+    // buildDivHand(secondHandArray, 'second', secondHand.angle, 'secondHandDiv',  1);
+    // buildDivHand(minuteHandArray, 'minute', minuteHand.angle, 'minuteHandDiv',  2);
+    // buildDivHand(hourHandArray, 'hour', hourHand.angle, 'hourHandDiv', 4);
   }
 
   function clearCanvas(){
@@ -238,9 +179,9 @@ $(document).ready(function(){
     secondHand.drawSecondHand();
     minuteHand.drawMinuteHand();
     hourHand.drawHourHand();
-    updateDivHand(secondHandArray, secondHand.angle, 1);
-    updateDivHand(minuteHandArray, minuteHand.angle, 2);
-    updateDivHand(hourHandArray, hourHand.angle, 4);
+    // updateDivHand(secondHandArray, secondHand.angle, 1);
+    // updateDivHand(minuteHandArray, minuteHand.angle, 2);
+    // updateDivHand(hourHandArray, hourHand.angle, 4);
   }
 
 
@@ -286,7 +227,7 @@ $(document).ready(function(){
 
 
   initialize();
-  drawDivClockFace();
+  // drawDivClockFace();
   drawClockFace();
   var requestAnimationFrame = window.requestAnimationFrame;
   function timeLoop() {
