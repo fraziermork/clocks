@@ -33,8 +33,8 @@ $(document).ready(function(){
     seconds: 0,
 
     updateMinuteHand: function(){
-      console.log('minuteHand updated');
-      minuteHand.angle = (minuteHand.angle + minuteHand.increment);
+      console.log('minute hand updated');
+      minuteHand.angle += minuteHand.increment;
       if (secondHand.seconds % 72 === 0){
         hourHand.updateHourHand();
       }
@@ -55,10 +55,11 @@ $(document).ready(function(){
     seconds: 0,
 
     updateHourHand: function(){
-      console.log('hourHand updated');
-      hourHand.angle = (hourHand.angle + hourHand.increment);
-      if (secondHand.seconds % 3600 === 0){
+      console.log('hour hand updated')
+      hourHand.angle += hourHand.increment;
+      if (secondHand.seconds % 3600 < 72){
         //clock runs slow and I'm not sure why, so this resets it every hour
+        console.log('clock reset');
         initialize();
       }
     },
